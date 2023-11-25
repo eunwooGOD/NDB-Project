@@ -1,42 +1,44 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 231125 정은우 : body 및 기본 폰트 설정  */
+/* 로고 폰트 */
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/*  */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* 코딩 코드 폰트 */
+@font-face {
+  font-family: 'intelone-mono-font-family-regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.notosanskr * {
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* main CSS 시작 */
+/* body 마진 값 0 / 배경 색 설정(1B3455) / 폰트 설정*/
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #1B3455;
+  color: white;
+  overflow-y: scroll;
 }
 
-.card {
-  padding: 2em;
+body.day {
+  color: #212121 ;
+  background-color: white;
 }
 
-.read-the-docs {
-  color: #888;
+/* 스크롤바 안보이게 ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+body::-webkit-scrollbar {
+  display: none;
 }
