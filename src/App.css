@@ -2,39 +2,37 @@
 /* 로고 폰트 */
 @font-face {
   font-family: 'GmarketSansMedium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-/*  */
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 /* 코딩 코드 폰트 */
 @font-face {
   font-family: 'intelone-mono-font-family-regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
 }
-
-.notosanskr * {
-  font-family: 'Noto Sans KR', sans-serif;
+/* 231125-18시 현진  : 모든 요소에 대해 box-sizing 속성을 border-box로 설정 */
+* {
+  box-sizing: border-box;
+  /* border: 1px solid rgba(228, 222, 222, 0.5); */
 }
 
 /* main CSS 시작 */
 /* body 마진 값 0 / 배경 색 설정(1B3455) / 폰트 설정*/
 body {
-  margin: 0;
-  box-sizing: border-box;
   font-family: 'Noto Sans KR', sans-serif;
-  background-color: #1B3455;
+  background-color: #1b3455;
   color: white;
   overflow-y: scroll;
 }
 
 body.day {
-  color: #212121 ;
+  color: #212121;
   background-color: white;
 }
 
