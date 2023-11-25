@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react'
-import { useCookies } from 'react-cookie'
+// import { useCookies } from 'react-cookie'
 import '../style/Login.css' // Import your CSS file
 
 function Login() {

@@ -1,13 +1,12 @@
 import React from 'react';
 
-const PaymentRequest = ({ amount }) => {
+const PaymentRequest = ({ amount, name, buyerEmail, buyerName, buyerTel, buyerAddr, buyerPostcode }) => {
     const requestPay = () => {
         if (typeof window.IMP === 'undefined') {
             alert('결제 모듈 로드 실패');
             return;
         }
 
-        
         window.IMP.init('iamport'); // 'iamport'는 가맹점 식별코드
         window.IMP.request_pay({
             pg: "inicis", // 결제 게이트웨이
@@ -29,7 +28,6 @@ const PaymentRequest = ({ amount }) => {
                 // 실패 시 로직
             }
         });
-
     };
 
     return (
