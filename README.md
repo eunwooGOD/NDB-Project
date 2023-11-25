@@ -6,7 +6,7 @@
 - [프로젝트 정의](#NDB-Project)
 - [사용기술](#사용기술)
 - [Getting Started](#Getting-Started)
-- [git hub rules](#md파일-추가예정)
+- [git hub rules](#docs/git rules.md)
 
 ---
 ## 사용기술
