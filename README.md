@@ -1,23 +1,28 @@
+
 # NDB-Project
+프로젝트 실행 계기 및 필요성
 
-# vite path alias 관련 설정
+## 목차
+- [프로젝트 정의](#NDB-Project)
+- [사용기술](#사용기술)
+- [Getting Started](#Getting-Started)
+- [git hub rules](#md파일-추가예정)
 
-- https://chaika.hatenablog.com/entry/2022/05/14/083000
+---
+## 사용기술
+- react
 
-# eslint && pretiier 에러 발생시
+- vite
 
-```javascript
-// ./.vscode/settings.json
-{
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
-}
+- node.js
+
+- express
+
+
+
+### Getting Started
+
 ```
+npm run dev
+```
+
