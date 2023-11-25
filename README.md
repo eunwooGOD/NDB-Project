@@ -1,23 +1,20 @@
 # NDB-Project
+프로젝트 실행 계기 및 필요성
 
-# vite path alias 관련 설정
+---
+# 사용기술
+- react
 
-- https://chaika.hatenablog.com/entry/2022/05/14/083000
+- vite
 
-# eslint && pretiier 에러 발생시
+- node.js
 
-```javascript
-// ./.vscode/settings.json
-{
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
-}
+- express
+
+
+
+### Getting Started
+
+```
+npm run dev
 ```
