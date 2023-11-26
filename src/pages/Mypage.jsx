@@ -15,95 +15,79 @@ function Mypage({
 }) {
   const [tabmenu, setTabmenu] = useState('')
   const handletabmenu = (e) => {
-    const value = e.target.className
-    value == '풀었던 문제' ? setTabmenu('current') : setTabmenu('notosanskr')
-    console.log('클릭되었습니다', tabmenu)
-  }
+    const value = e.target.innertext
+    console.log('확인되었습니다.', value)
+   };
+  
 
   return (
     <div className="my_main_container">
       {/* 프로필카드 */}
       <div className="mp_card">
-      <div className="profile">
-            <h2 className="mp_Name" id="Mp_id">
-              id
-            </h2>
-            <span className="mp_Name" id="Mp_name">
-              NAME
-            </span>
-          </div>
+        <div className="profile">
+          <h2 className="mp_Name" id="Mp_id">
+            id
+          </h2>
+          <h2 className="mp_Name" id="Mp_name">
+            NAME
+          </h2>
+        </div>
         <div className="mp_banner">
           <img
             src={profileImage}
-            style={{ borderRadius: '5px', boxSizing: 'cover', padding:'25px', width:'60%'}}
+            style={{
+              borderRadius: '5px',
+              boxSizing: 'cover',
+              padding: '25px',
+              width: '40%',
+            }}
           ></img>
         </div>
       </div>
 
-      {/* tab메뉴창 */}
-      <div className="mp_tabmenu notosanskr">
-        <ul className="mp_tabs notosanskr">
-          <li
-            className={`mp_tab-link ${tabmenu}`}
-            data-tab="mp_tab-1"
-            onClick={handletabmenu}
-          >
-            풀었던 문제
-          </li>
-          <li
-            className={`mp_tab-link notosanskr ${tabmenu}`}
-            data-tab="mp_tab-2"
-            onClick={handletabmenu}
-          >
-            개인 정보
-          </li>
-          <li
-            className={`mp_tab-link notosanskr ${tabmenu}`}
-            data-tab="mp_tab-3"
-            onClick={handletabmenu}
-          >
-            결제 정보
-          </li>
-          <li
-            className={`mp_tab-link notosanskr ${tabmenu}`}
-            data-tab="mp_tab-4"
-            onClick={handletabmenu}
-          >
-            현재 등급
-          </li>
-          <li
-            className={`mp_tab-link notosanskr ${tabmenu}`}
-            data-tab="mp_tab-5"
-            onClick={handletabmenu}
-          >
-            문의 사항
-          </li>
-          <li
-            className={`mp_tab-link notosanskr ${tabmenu}`}
-            data-tab="mp_tab-6"
-            onClick={handletabmenu}
-          >
-            탈퇴 하기
-          </li>
-          <li
-            className={`mp_tab-link notosanskr ${tabmenu}`}
-            data-tab="mp_tab-7"
-            onClick={handletabmenu}
-          >
-            계정 연동
-          </li>
-        </ul>
-
-        {/* TabContent 컴포넌트 추가 */}
+ {/* tab메뉴창 */}
+ <div className="mp_tabmenu notosanskr">
+     <div className='mp_list'>
+     <ul className="mp_tabs notosanskr">
+       <li
+         className={'mp_tab-1'}
+         onClick={ handletabmenu}
+       >
+         풀었던 문제
+       </li>
+       <li
+         className={'mp_tab-2'}
+         id={2}
+         onClick={(e) => handletabmenu}
+       >
+         개인 정보
+       </li>
+       <li
+         className={`mp_tab-3 ${tabmenu}`}
+         id={3}
+         onClick={(e) => handletabmenu}
+       >
+         결제 정보
+       </li>
+       <li
+         className={`mp_tab-5 ${tabmenu}`}
+         id={4}
+         onClick={(e) => handletabmenu}
+       >
+         문의 사항
+       </li>
+     </ul>
+     </div>
+    </div>
+        {/* TabContent 컴포넌트 추가
         <TabContent
-          tabId={tabId}
+          data-tab={tabId}
           member_lv={member_lv}
           userGrade={userGrade}
           questions={questions}
           total_pages={total_pages}
-        />
+        /> */}
       </div>
-    </div>
   )
 }
 
