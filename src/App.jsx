@@ -25,7 +25,7 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
         </Routes>
       </div>
-      {isModalOpen && <SubsModal isOpen={isModalOpen} onClose={closeModal} />}
+      {/* {isModalOpen && <SubsModal isOpen={isModalOpen} onClose={closeModal} />} */}
     </Router>
   );
 }
