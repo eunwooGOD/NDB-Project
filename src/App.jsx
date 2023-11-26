@@ -10,7 +10,6 @@ import NavigationBar from './components/NavigationBar';
 function App() {
   return (
     <Router>
-      <div>
         <NavigationBar/>
         <Routes>
           <Route path='/' element={<Main />} />
@@ -18,7 +17,6 @@ function App() {
           <Route path='/subs' element={<Subs />} />
           <Route path='/mypage' element={<MyPage />} />
         </Routes>
-      </div>
     </Router>
   )
 }
