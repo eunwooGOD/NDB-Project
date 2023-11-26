@@ -5,9 +5,11 @@ import '../style/Subs.css';
 const NavigationBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // 모달을 열기 위한 함수
-  const openModal = () => {
+  const openModal = (event) => {
+    event.preventDefault();
+    console.log('openModal 호출됨');
     setIsModalOpen(true);
+    console.log('모달 상태:', isModalOpen); 
   };
 
   // 모달을 닫기 위한 함수
