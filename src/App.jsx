@@ -5,7 +5,7 @@ import Join from './pages/Join'
 import Subs from './pages/Subs'
 import MyPage from './pages/MyPage'
 import './App.css'
-import NavigationBar from './components/NavigationBar'
+import NavigationBar from './components/navigation/NavigationBar'
 import Login from './pages/Login'
 
 function App() {
