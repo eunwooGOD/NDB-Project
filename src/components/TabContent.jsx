@@ -2,10 +2,9 @@ import React, { useState }  from 'react'
 
 function TabContent({ tabId, member_lv, userGrade, questions, total_pages }) {
   
-
   return (
     <div>
-    
+    state
     </div>
   )
 

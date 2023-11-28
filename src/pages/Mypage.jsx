@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import '../style/Mypage.css'
 import TabContent from '../components/TabContent'
 import profileImage from '../assets/beomsu/profile.png'
 
-function Mypage({
+
+function Mypage() {[
   tabId,
   member_lv,
   userGrade,
   questions,
   total_pages,
-  name,
   password,
-  id,
-}) {
-  const [tabmenu, setTabmenu] = useState('')
+  id,]
+} {
+  const [tabmenu, setTabmenu] = useState(null)
   const handletabmenu = (e) => {
-    const value = e.target.innertext
-    console.log('확인되었습니다.', value)
-   };
-  
+    setTabmenu(e === tabmenu ? null : e)
+    console.log('확인되었습니다.', e)
+
+  }
 
   return (
     <div className="my_main_container">
@@ -45,49 +45,55 @@ function Mypage({
         </div>
       </div>
 
- {/* tab메뉴창 */}
- <div className="mp_tabmenu notosanskr">
-     <div className='mp_list'>
-     <ul className="mp_tabs notosanskr">
-       <li
-         className={'mp_tab-1'}
-         onClick={ handletabmenu}
-       >
-         풀었던 문제
-       </li>
-       <li
-         className={'mp_tab-2'}
-         id={2}
-         onClick={(e) => handletabmenu}
-       >
-         개인 정보
-       </li>
-       <li
-         className={`mp_tab-3 ${tabmenu}`}
-         id={3}
-         onClick={(e) => handletabmenu}
-       >
-         결제 정보
-       </li>
-       <li
-         className={`mp_tab-5 ${tabmenu}`}
-         id={4}
-         onClick={(e) => handletabmenu}
-       >
-         문의 사항
-       </li>
-     </ul>
-     </div>
-    </div>
-        {/* TabContent 컴포넌트 추가
+      {/* tab메뉴창 */}
+      <div className="mp_tabmenu notosanskr">
+        <div className="mp_list">
+          <ul className="mp_tabs notosanskr">
+            <li
+              className={`mp_tab-1 ${tabmenu === 1 ? 'current' : ''}`}
+              onClick={() => handletabmenu(1)}
+            >
+              {' '}
+              풀었던 문제
+            </li>
+            <li
+              
+              className={`mp_tab-2 ${tabmenu === 2 ? 'current' : ''}
+              }`}
+              id={2}
+              onClick={() => handletabmenu(2)}
+            >
+              개인 정보
+            </li>
+            <li
+              
+              className={`mp_tab-3  ${tabmenu === 3 ? 'current' : ''}
+              }`}
+              id={3}
+              onClick={() => handletabmenu(3)}
+            >
+              결제 정보
+            </li>
+            <li
+              className={`mp_tab-5  ${tabmenu === 4 ? 'current' : ''}
+              }`}
+              id={4}
+              onClick={() => handletabmenu(4)}
+            >
+              문의 사항
+            </li>
+          </ul>
+        </div>
+      </div>
+      TabContent 컴포넌트 추가
         <TabContent
-          data-tab={tabId}
+          tabID={tabId}
           member_lv={member_lv}
           userGrade={userGrade}
           questions={questions}
           total_pages={total_pages}
-        /> */}
-      </div>
+        />
+    </div>
   )
 }
 
