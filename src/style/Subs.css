@@ -1,171 +1,206 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
 
-
 /* -------------구독모달창---------------- */
 .subs_body {
     font-weight: 300;
-    font-size: 18px;
-    line-height: 1.7em;
+    font-size: 18px;    
+    line-height: 1.3em;
+    overflow-y: auto; /* 추가: 내용이 많을 경우 스크롤 가능하도록 설정 */
 }
 
 .subs_modal {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: fixed; /* 변경: fixed로 설정하여 화면에 고정 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 변경: 화면 전체 너비 사용 */
+     /* 변경: 높이를 자동으로 조정 */
+    max-height: 40vh  ;
+     
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 7px;
     z-index: 999;
     display: none;
+    overflow-y: auto; /* 추가: 내용이 많을 경우 스크롤 가능하도록 설정 */
 }
-
-
 
 .subs_modal:active {
     display: block;
 }
 
-.content-box {
-    margin-top: 10px; /* 콘텐츠들 사이의 간격 */
+.subs_desc_content{
+    height:60vh;
 }
 
-.subs_modal_content{
+
+.subs_modal_content {
+    height:100vh;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
-    width: 834px;
-    overflow: hidden;
+    width: 100%; /* 변경: 너비를 100%로 설정 */
+    max-width: 834px;
+    max-height: 90vh ; /* 추가: 내부 콘텐츠의 최대 높이 제한 */
+    /*overflow-y: auto;
+    /* 추가: 내용이 많을 경우 스크롤 가능하도록 설정 */
     background-color: #1B3455;
-    margin-top: 100px ;
-    margin: auto; /* 중앙 정렬 */
-
+    margin: auto;
+    margin-top: 43px;
+    box-sizing: border-box; 
 }
 
-/* 서브타이틀 스타일링 */
+/* 작은 화면에서의 레이아웃 조정 */
+@media (max-width: 768px) {
+    .subs_modal_content {
+        flex-direction: column;
+    }
+
+    .content-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* 중형 화면에서의 레이아웃 조정 */
+@media (max-width: 1024px) {
+    .content-box {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+/* 대형 화면 (데스크탑) */
+@media (min-width: 1025px) {
+    .subs_modal_content {
+        /*width: 50%;*/
+    }
+}
+
+/* 작은 화면에서의 스타일 조정 */
+@media (max-width: 768px) {
+    .subs_modal_content {
+        width: 95%;
+    }
+
+    .subs_subtitle, .subs_header, #subs_title {
+        font-size: smaller;
+    }
+}
+
 .subs_subtitle {
-    margin-bottom: 20px; /* 타이틀과의 간격 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    /* 필요에 따라 여기에 추가 스타일 (폰트 크기, 색상, 등)을 적용 */
-  }
-/* 
-subs_modal_content {
-    background-color: white; /* 배경색 */
-   /* padding: 20px; /* 패딩 */
-    /*border-radius: 10px; /* 테두리 둥글게 */
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-  /*} */
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 .subs_button_close {
-    /* position: absolute; */
-    top: -2px;
-    right: 3px;
+    position: absolute;
+    top: 39px;
+    right: 124px;
     background-color: transparent;
     border: none;
-    outline:none;
+    outline: none;
     color: #ccc;
-    font-size: 18px;
 }
+
 .subs_button_close:hover {
     color: #8CA9BF;
 }
 
-.subs_header{
-    font-size:larger;
+.subs_header {
+    font-size: larger;
     text-align: center;
-    /* position:absolute; */
     color: #FFFFFF;
 }
-#subs_title{
+
+#subs_title {
     font-size: 55px;
-    margin-bottom:25px;
-    margin-top:23px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 23px;
 }
-.subs_subtitle{
+
+.subs_subtitle {
     font-weight: bold;
-    font-size:20px;
-    margin-top:-8px;
+    font-size: 20px;
+    margin-top: -8px;
     margin-bottom: 14px;
 }
 
-
-h1{
-    font-size:57px;
-
+h1 {
+    font-size: 57px;
 }
-h2,h3{
+
+h2, h3 {
     text-align: center;
-    font-size:30px;
-    color:black;
-}
-.subs_btn_open{ 
-    font-size: 15px;
-    /* border-width: 2px;
-    border-style: outset;
-    border-color: buttonborder;
-    border-image: initial; 
-    display:inline-block;*/
+    font-size: 30px;
+    color: black;
 }
 
-.subs_desc_content{
-    display:flex;
+.subs_btn_open {
+    font-size: 15px;
+}
+
+.subs_desc_content {
+    display: flex;
     justify-content: center;
 }
 
-
-.content-box > button{
-    
-    width : 60px;
-    
+.content-box > button {
+    width: 65px;
+    height: 40px;
+    align-self: center;
+    margin-top: auto;
 }
-.content-box{
-    width:33%;
-    height:200%;
+
+.content-box {
+    width: 45%;
+    height: auto; /* 변경: 고정 높이 제거 */
     border-radius: 12px;
     background-color: #8CA9BF;
     margin-left: 20px;
     margin-bottom: 20px;
-    
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 10px;
 }
-.subs_benefit{
-    margin-left:-13px;
-    font-size:16px;
-    color:black;
-}    
-.subs_price{
+
+.content-box p {
+    margin: 0 0 10px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.subs_benefit {
+    margin-left: -13px;
+    font-size: 16px;
+    color: black;
+}
+
+.subs_price {
     text-align: center;
     margin: -22px 0 9px 0;
-    font-size:22px;
-    font-weight:bold;
-    display:flex;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
     justify-content: center;
-}    
-.subs_li{
-    list-style-type:none;
-    padding-left: 45px;
-
 }
 
-.content3{
-    margin-right:20px;
-}
-
-.content1:hover{
-    background-color:#FFFFFF;
-    transform:  scale(1.1, 1.05) ;
-
-}
-.content2:hover{
-    background-color:#FFFFFF;
-    transform:  scale(1.1, 1.05) ;
-}
-.content3:hover{
-    background-color:#FFFFFF;
-    transform:  scale(1.1, 1.05) ;
+.subs_li {
+    list-style-type: none;
+    padding-left: 25px;
+    padding-right: 5px;
 }
 
 
+.content1:hover, .content2:hover, .content3:hover {
+    background-color: #FFFFFF;
+    transform: scale(1.05, 1.025);
+    transition-duration: 400ms;
+}
 
 .subs_desc_content input[type=email] {
     display: block;
@@ -175,38 +210,45 @@ h2,h3{
     padding: 7px;
     outline: none;
     border: 1px solid #ccc;
-   
 }
+
 .subs_desc_content input[type=email]::placeholder {
     color: #ccc;
 }
-.subs_desc_content input[type=email]:focus::placeholder{
+
+.subs_desc_content input[type=email]:focus::placeholder {
     opacity: 0;
 }
+
 .subs_desc_content button {
-    display:flex;
-    /* margin-left:50px; */
+    display: flex;
     padding: 7px;
     background-color: rgb(212, 69, 97);
     color: #FFFFFF;
     border: none;
     outline: none;
     width: 122px;
-    font-size:16px;
+    font-size: 16px;
     justify-content: center;
     border-radius: 12px;
 }
 
-.subs_btn{
-    display:flex;
+.subs_btn {
+    display: flex;
     justify-content: center;
     margin-bottom: 18px;
     margin-top: 23px;
 }
 
+.subs_btn a,
+.subs_btn button {
+  text-decoration: none; /* 버튼의 밑줄 제거 */
+}
+
 .subs_desc_content button:hover {
     background-color: rgb(211, 22, 60);
 }
+
 .overlay {
     margin: 0;
     padding: 0;
@@ -225,15 +267,4 @@ h2,h3{
 .overlay-active {
     display: block !important;
     visibility: visible !important;
-}
-
-
-@media (max-width:768px) {
-    .subs_modal_content {
-        flex-direction: column;
-        width: 360px;
-    }
-    .photo {
-        flex-basis: 250px; 
-    }
 }

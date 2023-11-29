@@ -112,8 +112,8 @@ const SubsModal = ({ isOpen, onClose }) => {
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
-
-                    {/* 기타 항목 */}
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
                   </ul>
                 </div>
                 <div className="subs_btn">
@@ -129,13 +129,12 @@ const SubsModal = ({ isOpen, onClose }) => {
                   <ul className="subs_li">
                     <li>-&nbsp; 버전 업그레이드 </li>
                     <li>-&nbsp; 테마 설정 </li>
-
                     <li>-&nbsp; 예제에 대한 개념 정리</li>
                     <li>-&nbsp; 배너 제거 </li>
                     <li>-&nbsp; 자사 커뮤니티 사이트 가입</li>
                     <li>-&nbsp; 추천 강의 20% 할인권</li>
                     <li>&nbsp; </li>
-                    {/* 기타 항목 */}
+                    <li>&nbsp; </li>
                   </ul>
                 </div>
                 <div className="subs_btn">
@@ -151,24 +150,18 @@ const SubsModal = ({ isOpen, onClose }) => {
                   <ul className="subs_li">
                     <li>-&nbsp; 버전 업그레이드 </li>
                     <li>-&nbsp; 테마 설정 </li>
-
                     <li>-&nbsp; 예제에 대한 개념 정리 </li>
                     <li>-&nbsp; 배너 제거 </li>
                     <li>-&nbsp; 자사 커뮤니티 사이트 가입</li>
-
                     <li>-&nbsp; 추천 강의 40% 할인권</li>
                     <li>-&nbsp; 인기 문제&개념 모음집PDF </li>
-                    {/* 기타 항목 */}
                   </ul>
                 </div>
                 <div className="subs_btn">
                   <button onClick={requestPay1} id="subscribe-link3">구독하기</button>
                 </div>
               </div>
-
             </div>
-
-
           </div>
         </div>
       ) : (
