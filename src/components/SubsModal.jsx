@@ -112,8 +112,7 @@ const SubsModal = ({ isOpen, onClose }) => {
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
                     <li>&nbsp;</li>
-                    <li>&nbsp;</li>
-                    <li>&nbsp;</li>
+                  
                   </ul>
                 </div>
                 <div className="subs_btn">
@@ -133,8 +132,8 @@ const SubsModal = ({ isOpen, onClose }) => {
                     <li>-&nbsp; 배너 제거 </li>
                     <li>-&nbsp; 자사 커뮤니티 사이트 가입</li>
                     <li>-&nbsp; 추천 강의 20% 할인권</li>
-                    <li>&nbsp; </li>
-                    <li>&nbsp; </li>
+                    <li>&nbsp;</li>
+                  
                   </ul>
                 </div>
                 <div className="subs_btn">

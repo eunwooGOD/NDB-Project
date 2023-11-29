@@ -5,23 +5,20 @@
     font-weight: 300;
     font-size: 18px;    
     line-height: 1.3em;
-    overflow-y: auto; /* 추가: 내용이 많을 경우 스크롤 가능하도록 설정 */
 }
 
 .subs_modal {
-    position: fixed; /* 변경: fixed로 설정하여 화면에 고정 */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 100%; /* 변경: 화면 전체 너비 사용 */
-     /* 변경: 높이를 자동으로 조정 */
-    max-height: 40vh  ;
-     
+    width: 100%;
+    max-height: 40vh  ;     
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 7px;
     z-index: 999;
     display: none;
-    overflow-y: auto; /* 추가: 내용이 많을 경우 스크롤 가능하도록 설정 */
+    overflow-y: auto; 
 }
 
 .subs_modal:active {
@@ -30,23 +27,26 @@
 
 .subs_desc_content{
     height:60vh;
+    
 }
 
 
 .subs_modal_content {
-    height:100vh;
+    height:75vh;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
     width: 100%; /* 변경: 너비를 100%로 설정 */
-    max-width: 834px;
-    max-height: 90vh ; /* 추가: 내부 콘텐츠의 최대 높이 제한 */
-    /*overflow-y: auto;
-    /* 추가: 내용이 많을 경우 스크롤 가능하도록 설정 */
+    max-width: 870px;
+    max-height: 90vh ; 
+    padding-right:18px;
     background-color: #1B3455;
     margin: auto;
     margin-top: 43px;
     box-sizing: border-box; 
+    position: relative;
+    flex-wrap: wrap; 
+    justify-content: center;
 }
 
 /* 작은 화면에서의 레이아웃 조정 */
@@ -55,11 +55,16 @@
         flex-direction: column;
     }
 
+    .subs_benefit {
+        min-width: 150px; 
+    }
     .content-box {
         width: 100%;
         margin-bottom: 20px;
     }
 }
+
+
 
 /* 중형 화면에서의 레이아웃 조정 */
 @media (max-width: 1024px) {
@@ -69,10 +74,17 @@
     }
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+    .subs_benefit {
+        min-width: 180px; 
+    }
+}
+
 /* 대형 화면 (데스크탑) */
 @media (min-width: 1025px) {
-    .subs_modal_content {
-        /*width: 50%;*/
+   
+    .subs_benefit {
+        min-width: 200px; 
     }
 }
 
@@ -94,14 +106,16 @@
 
 .subs_button_close {
     position: absolute;
-    top: 39px;
-    right: 124px;
+    top: 10px;    
+    right: 10px;  
     background-color: transparent;
     border: none;
     outline: none;
     color: #ccc;
+    cursor: pointer; 
+    font-size: 24px; 
+    line-height: 24px; 
 }
-
 .subs_button_close:hover {
     color: #8CA9BF;
 }
@@ -116,7 +130,8 @@
     font-size: 55px;
     font-weight: 700;
     margin-bottom: 15px;
-    margin-top: 23px;
+    margin-top: 70px;
+    padding-top:30px;
 }
 
 .subs_subtitle {
@@ -150,18 +165,18 @@ h2, h3 {
     height: 40px;
     align-self: center;
     margin-top: auto;
+    
 }
 
 .content-box {
     width: 45%;
-    height: auto; /* 변경: 고정 높이 제거 */
+    height: auto; 
     border-radius: 12px;
     background-color: #8CA9BF;
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 130px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 15px;
     box-sizing: border-box;
     margin-top: 10px;
@@ -178,6 +193,15 @@ h2, h3 {
     margin-left: -13px;
     font-size: 16px;
     color: black;
+    width: 250px;
+    height: 300px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    min-width: 250px;
+    min-height: 200px;
+    max-width: 100%;  
+    max-height: 100%; 
 }
 
 .subs_price {
@@ -242,7 +266,7 @@ h2, h3 {
 
 .subs_btn a,
 .subs_btn button {
-  text-decoration: none; /* 버튼의 밑줄 제거 */
+  text-decoration: none; 
 }
 
 .subs_desc_content button:hover {
