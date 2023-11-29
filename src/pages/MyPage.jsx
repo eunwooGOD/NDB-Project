@@ -1,35 +1,30 @@
 import React, { useState} from 'react'
 import '../style/Mypage.css'
-import TabContent from '../components/TabContent'
+import UserInfo from '../components/UserInfo'
 import profileImage from '../assets/beomsu/profile.png'
+import Subinfo from '../components/Subinfo'
+import QA from '../components/QA'
+import CompleteProblem from '../components/CompleteProblem'
 
 
-function Mypage() {[
-  tabId,
-  member_lv,
-  userGrade,
-  questions,
-  total_pages,
-  password,
-  id,]
-} {
+function Mypage() {
+ {
   const [tabmenu, setTabmenu] = useState(null)
   const handletabmenu = (e) => {
-    setTabmenu(e === tabmenu ? null : e)
+    setTabmenu(e)
     console.log('확인되었습니다.', e)
-
   }
-
+  
   return (
+    <div>
     <div className="my_main_container">
-      {/* 프로필카드 */}
       <div className="mp_card">
         <div className="profile">
           <h2 className="mp_Name" id="Mp_id">
-            id
+            NSDBPRO@gmail.com
           </h2>
           <h2 className="mp_Name" id="Mp_name">
-            NAME
+            순두부님
           </h2>
         </div>
         <div className="mp_banner">
@@ -46,6 +41,7 @@ function Mypage() {[
       </div>
 
       {/* tab메뉴창 */}
+      <div className='mp_tabstate'>
       <div className="mp_tabmenu notosanskr">
         <div className="mp_list">
           <ul className="mp_tabs notosanskr">
@@ -54,19 +50,17 @@ function Mypage() {[
               onClick={() => handletabmenu(1)}
             >
               {' '}
-              풀었던 문제
+              개인 정보
             </li>
             <li
-              
               className={`mp_tab-2 ${tabmenu === 2 ? 'current' : ''}
               }`}
               id={2}
               onClick={() => handletabmenu(2)}
             >
-              개인 정보
+              풀었던 문제
             </li>
             <li
-              
               className={`mp_tab-3  ${tabmenu === 3 ? 'current' : ''}
               }`}
               id={3}
@@ -85,16 +79,14 @@ function Mypage() {[
           </ul>
         </div>
       </div>
-      TabContent 컴포넌트 추가
-        <TabContent
-          tabID={tabId}
-          member_lv={member_lv}
-          userGrade={userGrade}
-          questions={questions}
-          total_pages={total_pages}
-        />
+      {tabmenu === 1 && <UserInfo/>}
+      {tabmenu === 2 && <CompleteProblem/>}
+      {tabmenu === 3 && <Subinfo/>}
+      {tabmenu === 4 && <QA/>}
+      </div>
+    </div>
     </div>
   )
-}
+}}
 
 export default Mypage
