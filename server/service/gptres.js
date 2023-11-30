@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const path = require("path");
 
-
+router.get('/codeExam', (req, res)=>{
+    console.log('code router')
+})
 
 module.exports = router;
