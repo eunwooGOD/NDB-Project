@@ -5,14 +5,13 @@ import Join from './pages/Join'
 import Subs from './pages/Subs'
 import MyPage from './pages/MyPage'
 import './App.css'
-import NavigationBar from './components/NavigationBar'
+import NavigationBar from './components/navigation/NavigationBar'
 import Login from './pages/Login'
 
 function App() {
   return (
     <Router>
-      <div>
-        <NavigationBar />
+        <NavigationBar/>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />
@@ -20,7 +19,6 @@ function App() {
           <Route path="/subs" element={<Subs />} />
           <Route path="/mypage" element={<MyPage />} />
         </Routes>
-      </div>
     </Router>
   )
 }
