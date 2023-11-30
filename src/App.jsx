@@ -5,7 +5,7 @@ import Join from './pages/Join';
 import MyPage from './pages/MyPage';
 import Login from './pages/Login';
 import NavigationBar from './components/navigation/NavigationBar';
-import SubsModal from './components/SubsModal';
+// import SubsModal from './components/SubsModal';
 import './App.css';
 
 function App() {

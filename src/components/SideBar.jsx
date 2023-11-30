@@ -1,8 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import "../style/SideBar.css"
+import SubsModal from './SubsModal'; // SubsModal 컴포넌트의 경로를 정확하게 지정해주세요.
 
 const SideBar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (event) => {
+    event.preventDefault();
+    console.log('openModal 호출됨');
+    setIsModalOpen(true);
+    console.log('모달 상태:', isModalOpen); 
+  };
+
+  // 모달을 닫기 위한 함수
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+	
   return (
     <div id="sidebar_toggle">
       <input type="checkbox" />
@@ -29,10 +44,9 @@ const SideBar = () => {
         <Link to="/mypage" id="mypage_btn_open">
           <li>마이페이지</li>
         </Link>
-        <Link to="./subs" className="subs_btn_open">
-          <li>구독</li>
-        </Link>
+        <li><a href="#" className="subs_btn_open" onClick={openModal}>구독</a></li>
       </ul>
+      <SubsModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   )
 }
