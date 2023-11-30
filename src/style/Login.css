@@ -1,3 +1,19 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* 모든 요소에 대해 box-sizing 속성을 border-box로 설정 */
+* {
+  box-sizing: border-box;
+  /* border: 1px solid rgba(228, 222, 222, 0.5); */
+  font-family: 'Montserrat', sans-serif;
+}
 h2 {
   color: #f6f5f7;
   font-size: 20px;

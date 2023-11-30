@@ -40,3 +40,12 @@ body.day {
 body::-webkit-scrollbar {
   display: none;
 }
+
+/* LINK태그 기본 밑줄 등 꾸밈요소 삭제 */
+a {
+  text-align: center;
+  text-decoration: none;
+  /* 링크의 밑줄 제거 */
+  color: inherit;
+  /* 링크의 색상 제거 */
+}
