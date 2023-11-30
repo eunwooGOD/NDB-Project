@@ -1,0 +1,351 @@
+/* 네비게이션 바 설정 */
+#main_navbar {
+    height: 58px;
+    width: 100%;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    position: fixed;
+
+    display: flex;
+    flex: 2 1 0;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #212121;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+
+    z-index: 10;
+}
+
+/* 모달 팝업을 감싸고 있는 최상위 부모 */
+#main_modalWrap {
+    display: none;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 7rem;
+    /*Location of the box*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* 모달 팝업창 */
+#main_modalBody {
+    width: 500px;
+    height: 600px;
+    padding: 30px 30px;
+    margin: 0 auto;
+    border: 1px solid #777;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+/* 닫기 버튼 */
+#main_closeBtn {
+    float: right;
+    font-weight: bold;
+    color: #777;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* 메인  */
+
+/* 네비게이션 요소 구현 */
+/* 네비게이션 왼쪽 요소 시작 */
+.main_navLeft {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 12px
+}
+
+.main_navMiddle {
+    margin-left: 24px;
+    overflow: hidden;
+}
+
+.main_navMiddle>div {
+    opacity: 0;
+    animation: main_navMiddle_fadeOut 1s linear infinite;
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes main_navMiddle_fadeOut {
+    to {
+        opacity: 1;
+    }
+}
+
+.main_nav_logo {
+    font-weight: 1000;
+    font-size: large;
+    margin-left: 24px;
+    font-style: italic
+}
+/* 네비게이션 왼쪽 요소 끝 */
+
+/* 네비게이션 검색창 시작 */
+#main_navSearchbar {
+    height: 34px;
+    width: 300px;
+    display: flex;
+    padding-left: 12px;
+    /* 문제 창 애니메이션 CSS */
+    /* 애니메이션(좌->우)를 위한 position */
+    /* transform: translateX(-100%);
+    transition: transform 1s;
+    visibility: hidden; */
+    transition: opacity(0);
+    animation: FadeIn 1s linear infinite;
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes FadeIn {
+    to {
+        transform: opacity(100);
+    }
+}
+
+#main_navSearchbar>.main_search_button {
+    padding-right: 8px;
+    background-color: transparent;
+}
+
+#main_navSearchbar>input {
+    font-size: 0.8rem;
+    height: 32px;
+}
+
+/* 네비게이션 검색창 끝 */
+
+/* 네비게이션 오른쪽 요소 시작 */
+.main_navRight {
+    height: 100%;
+    display: flex;
+    align-items: center
+}
+.main_navRight>input{
+    all:unset;
+    position: relative;
+    width: 200px;
+    height: 25px;
+    /* background-color: red; */
+    z-index: 2;
+    right: -230px;
+    transform: translateY(0);
+}
+.main_navRight>ul {
+    float: left;
+    margin: 0;
+}
+
+.main_navRight>ul>li {
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.main_navRight>ul>:first-child {
+    color: #d2d2d2;
+    padding-right: 6px;
+}
+
+.main_navRight>ul>:nth-child(2) {
+    color: #ffffff;
+    padding-right: 6px;
+}
+
+/* 낮/밤 모드 전환 버튼 CSS 시작*/
+.checkbox-wrapper-2{
+    margin: 7px 15px 0 0;
+}
+.checkbox-wrapper-2 .ikxBAC {
+    appearance: none;
+    background-color: #dfe1e4;
+    border-radius: 72px;
+    border-style: none;
+    flex-shrink: 0;
+    height: 20px;
+    margin: 0;
+    position: relative;
+    width: 30px;
+}
+
+.checkbox-wrapper-2 .ikxBAC::before {
+    bottom: -6px;
+    content: "";
+    left: -6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+}
+
+.checkbox-wrapper-2 .ikxBAC,
+.checkbox-wrapper-2 .ikxBAC::after {
+    transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .ikxBAC::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 14px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    width: 14px;
+}
+
+.checkbox-wrapper-2{
+    margin: 7px 15px 0 0;
+}
+.checkbox-wrapper-2 input[type=checkbox] {
+    cursor: default;
+}
+
+.checkbox-wrapper-2 .ikxBAC:hover {
+    background-color: #c9cbcd;
+    transition-duration: 0s;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked {
+    background-color: #8CA9BF;
+    /* background-color: #6e79d6; */
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked::after {
+    background-color: #fff;
+    left: 13px;
+}
+
+.checkbox-wrapper-2 :focus:not(.focus-visible) {
+    outline: 0;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked:hover {
+    background-color: #60788b;
+    /* background-color: #535db3; */
+}
+
+/* 낮/밤 모드 전환 버튼 CSS 끝 */
+
+.main_popularSerch {
+    box-sizing: border-box;
+    padding-right: 32px;
+    min-width: 250px;
+    cursor: pointer;
+}
+#main_popularSerchModal{
+    background-color: white;
+    color: #212121;
+    position: absolute;
+    min-width: 200px;
+    padding: 8px;
+    padding-bottom: 12px;
+    top: calc(0% + 58px);
+    right: calc(0% + 200px);
+    font-size: 0.7rem;
+    display: flex;
+    position: fixed;
+    z-index: 9;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;   
+}
+.main_popularSerchModalTransform{
+    transform: translateY(calc(-100% - 10px));
+}
+/* [개선필요]굳이 class를 이렇게까지 나눠서 할 필요는 없음.. */
+#main_DownPopularSerchModalAnimation{
+    /* top: 50%; */
+    animation: TB_yMovement_down 1s ease forwards;
+}
+#main_DownPopularSerchModalAnimation{
+    /* top: 50%; */
+    animation: TB_yMovement_up 1s ease forwards;
+}
+@keyframes TB_yMovement_down {
+    to {
+        transform: translateY(calc(0% + 20px));
+    }
+}
+@keyframes TB_yMovement_up {
+    to {
+        transform: translateY(calc(-100% - 10px));
+    }
+}
+
+#main_popularSerchModal>p{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+#main_popularSerchModal>div{
+    width: 100%;
+    display: flex;
+    margin: 4px 0;
+}
+#main_popularSerchModal>div>div {
+    width: 50%;
+    margin: 0;
+    display: inline-block;
+}
+/* 네비게이션 끝 */
+/* 검색창 시작 */
+/* input, select 클릭시 생기는 기본 테두리 제거 */
+input,
+select:focus {
+    outline: none;
+}
+
+/* select 기본 스타일 제거 */
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+/* 다크모드 */
+.main_wrap_backImg_night {
+    /* 메인페이지 배경 이미지 추가 */
+    background-image: url('/img/NDB_night_BackImg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* 라이트모드 */
+.main_wrap_backImg_day {
+    /* 메인페이지 배경 이미지 추가 */
+    background-image: url('/img/NDB_day_BackImg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}   

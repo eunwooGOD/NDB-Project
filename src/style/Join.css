@@ -1,0 +1,261 @@
+/* 모든 요소에 대해 box-sizing 속성을 border-box로 설정 */
+
+h2 {
+  color: #f6f5f7;
+  font-size: 20px;
+}
+.h1 {
+  color: #f6f5f7;
+  text-align: center;
+  font-size: 55px;
+  margin-top: 6rem;
+}
+.h1 ~ p {
+  color: #ffffff9e;
+  margin-top: -30px;
+}
+
+body {
+  background: #1b3455;
+  overflow: auto;
+}
+
+/* ============================
+   ====== 배경 컨테이너  ======
+   ============================*/
+#back_container {
+  margin: 0;
+  padding: 0;
+  background: #1b3455;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  min-width: 80%;
+  /* min-height: 120vh; */
+  /* height: 100%; */
+  margin: -20px 0 50px;
+  overflow: visible;
+  position: relative;
+}
+
+/* ==============================
+   ====  로그인 폼 컨테이너  ====
+   ==============================*/
+#join_container {
+  width: 27rem;
+  height: 300px;
+
+  /* background-color: rgb(55, 65, 81);*/
+  border-radius: 3%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.join_form {
+  display: flex;
+  flex-direction: column;
+  color: #ccc;
+}
+.join_box > p {
+  display: flex;
+  margin-bottom: 8px;
+  align-items: flex-start;
+  margin-left: 1rem;
+  align-self: flex-start;
+}
+.join_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.join_input {
+  width: 18rem;
+  height: 40px;
+  padding: 5px;
+  margin-bottom: 10px;
+  box-shadow: 1px 0.5px 3px white;
+  border: none;
+  border-radius: 5px;
+  background-color: #8ca9bf4b;
+  /* align-self: center; */
+}
+.join_input:focus {
+  background-color: rgba(245, 245, 245, 0.109);
+  outline: none;
+}
+
+.join_button {
+  margin-top: 0.2rem;
+  margin-left: 10px;
+  padding: 11px 20px;
+  background-color: rgba(26, 14, 14, 0.376);
+  color: white;
+  box-shadow: 0.2px 0.2px 0.5px white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background ease-in-out 0.1s;
+  font-size: 14px;
+}
+
+.join_button:hover {
+  background-color: white;
+  font-size: 14px;
+  color: #1b3455;
+}
+.box_agreement {
+  margin-left: -30px;
+}
+/* ============================
+   ====     계정 찾기      ====
+   ============================*/
+.find_text {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 350;
+  position: relative;
+}
+.find {
+  display: inline-block;
+  flex-direction: row;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+.find:hover {
+  color: rgba(255, 255, 255, 0.342);
+}
+.find_join {
+  position: absolute;
+  right: 0;
+
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+.find_email ~ span {
+  color: #fff;
+}
+/* ============================
+   ====  하단 양쪽 가로선  ====
+   ============================*/
+
+.join_line {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.6rem;
+  margin-bottom: 1rem;
+}
+.join_hr_left {
+  width: 6rem;
+  height: 1px;
+  background-color: #f6f5f7;
+}
+
+.join_hr_right {
+  width: 6rem;
+  height: 1px;
+  background-color: #f6f5f7;
+}
+
+/* ===============================
+             모달 스타일  
+   ===============================*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.madal-login-button {
+  width: auto;
+  height: 25px;
+  border-radius: 20px;
+  background-color: #212121;
+  color: #fff;
+  font-weight: 800;
+}
+
+/* .box_agreement {
+  margin-left: -45px;
+} */
+.join_agreement a {
+  text-decoration: none;
+  color: #3c97bf;
+}
+/* ===============================
+   == 카카오, 구글, 깃 로그인폼 ==
+   ===============================*/
+
+.join_sns_login_div {
+  display: inline;
+  margin-top: 6rem;
+  margin-left: 3.9rem;
+}
+
+/* ========================================
+   ====  하단 푸터에 대한 스타일 설정   ===
+   ========================================*/
+footer {
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
+}
+
+/* footer 내부의 p 요소에 대한 스타일 설정 */
+footer p {
+  margin: 10px 0;
+}
+
+/* footer 내부의 i 요소에 대한 스타일 설정 */
+footer i {
+  color: black;
+}
+
+/* footer 내부의 a 요소에 대한 스타일 설정 */
+footer a {
+  color: #3c97bf;
+  text-decoration: none;
+}
+
+@media (min-width: 600px) {
+}
