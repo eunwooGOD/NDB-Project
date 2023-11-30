@@ -1,8 +1,9 @@
 // src/App.jsx
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import LoginFooter from '../components/LoginFooter'
 import '../style/Login.css' // Import your CSS file
+import axios from 'axios';
 
 function Login() {
   const cookies = document.cookie
@@ -12,6 +13,55 @@ function Login() {
 
   console.log('All Cookies:', cookies)
   console.log('Specific Cookie Value:', specificCookieValue.your_cookie_name)
+  const [userData, setUserData] = useState({})
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+
+    setUserData({
+      id: id.current.value,
+      pw: pw.current.value,
+    })
+  }
+  const idRef = useRef()
+  const pwRef = useRef()
+
+  useEffect(() => {
+    console.log(userData)
+    if (userData.id !== undefined) {
+      axios
+        .post('/user/login', {
+          userData: userData,
+        })
+        .then((res) => {
+          console.log(res.data)
+          if (res.data.msg === 'success') {
+            alert('로그인 성공!')
+            window.location.href = '/link'
+          } else {
+            alert('아이디 혹은 비밀번호를 확인해주세요!')
+            window.location.href = '/login'
+          }
+        })
+    }
+  }, [userData])
+
+  /** 로그인 버튼 함수 */
+  const login_btn = () => {
+    console.log('로그인 버튼 기능 활성화')
+    axios
+      .post('/user/login', {
+        userId: idRef.current.value, // 아이디
+        userPw: pwRef.current.value, // 비밀번호
+      })
+      .then((res) => {
+        if (res.data.result === 'success') {
+          window.location.href = '/'
+        } else {
+          console.log('로그인 가짜성공')
+        }
+      })
+  }
 
   // You can replace this with your React component logic
   return (
@@ -28,6 +78,7 @@ function Login() {
             id="login-form"
             className="login_form"
             method="post"
+            onSubmit={handleLogin}
           >
             <p>이메일</p>
             <input
@@ -35,6 +86,7 @@ function Login() {
               id="email"
               className="login_input"
               name="email"
+              ref={idRef}
               required
             />
             <p>비밀번호</p>
@@ -43,12 +95,18 @@ function Login() {
               id="password"
               className="login_input"
               name="password"
+              ref={pwRef}
               required
             />
             <span id="error-message" className="password_span hidden">
               이메일 및 비밀번호를 확인하세요.
             </span>
-            <button type="submit" id="login-button" className="login_button">
+            <button
+              type="submit"
+              id="login-button"
+              className="login_button"
+              onClick={login_btn}
+            >
               로그인
             </button>
           </form>
