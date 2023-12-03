@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import '../style/MyPage.css'
+import googlepng from '../assets/beomsu/google_img.png'
+import githubpng from '../assets/beomsu/github_img.png'
+import kakaopng from '../assets/beomsu/kakao_img.png'
 
 const UserInfo = ({ tabmenu }) => {
   return (
@@ -6,9 +10,13 @@ const UserInfo = ({ tabmenu }) => {
       <div className="mp_output" id="mp_frotable">
         <div>
           <h2 className="mp_h2">개인 정보</h2>
+          <p>이메일</p>
+          <p>비밀번호</p>
+          <p>별명</p>
         </div>
         <div>
         <h2 className="mp_h2">현재 등급</h2>
+        <p>현재 당신의 등급은 뉴비입니다.</p>
         </div>
         <div>
         <h2 className="mp_h2">탈퇴 하기</h2>
@@ -24,13 +32,13 @@ const UserInfo = ({ tabmenu }) => {
       <div>
         <p>계정 연동을 원하시면 아래의 버튼을 눌러주세요.</p>
         <button className="mp_auth-butoon google" onclick="location.href='#'">
-          <img src="/img/google_img.png" alt="" className="mp_emoticon" />
+          <img src={googlepng} alt="" className="mp_emoticon" />
         </button>
         <button className="mp_auth-butoon github" onclick="location.href='#'">
-          <img src="/img/github_img.png" alt="" className="mp_emoticon" />
+          <img src={githubpng} alt="" className="mp_emoticon" />
         </button>
         <button className="mp_auth-butoon kakao" onclick="location.href='#'">
-          <img src="/img/kakao_img.png" alt="" className="mp_emoticon" />
+          <img src={kakaopng} alt="" className="mp_emoticon" />
         </button>
       </div>
     </div>

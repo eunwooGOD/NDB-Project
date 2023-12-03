@@ -4,8 +4,8 @@ import Main from './pages/Main'
 import Join from './pages/Join'
 import Subs from './pages/Subs'
 import MyPage from './pages/Mypage'
-import NavigationBar from './components/NavigationBar'
-import Login from './pages/Login'
+import NavigationBar from './components/navigation/NavigationBar'
+import Login from './pages/Login' 
 import './App.css'
 
 function App() {

@@ -15,7 +15,7 @@ const Subinfo = ({ tabmenu,  }) => {
         {member_lv === 'STANDARD' && (
           <img src="./assets/beomsu/PRO" alt="STANDARD Membership Image" />
         )} */}
-        <img src="src\assets\beomsu\BASIC.png" alt=""/>
+        <img src="src\assets\beomsu\BASICcontrol.png" alt="" style={{marginTop: '5%'}}/>
       </div>
     </div>
   )
