@@ -220,6 +220,49 @@ body {
    == 카카오, 구글, 깃 로그인폼 ==
    ===============================*/
 
+.sns_form,
+.sns_login_div {
+  display: inline;
+  margin-top: 5rem;
+}
+
+.sns_button {
+  margin: 7px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: background ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.kakao_button {
+  background-image: url(../assets/login/kakao.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center; /* 정중앙에 배치 */
+}
+.kakao_button:hover {
+  background-color: rgba(251, 255, 1, 0.804);
+}
+.google_button {
+  background-image: url(../assets/login/google.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.google_button:hover {
+  background-color: #8ca9bf4b;
+}
+.git_button {
+  background-image: url(../assets/login/github.png);
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.git_button:hover {
+  background-color: rgba(120, 15, 120, 0.858);
+}
+
 .join_sns_login_div {
   display: inline;
   margin-top: 6rem;
