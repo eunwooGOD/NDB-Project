@@ -1,0 +1,195 @@
+/* nav제외 나머지 공간 */
+/* main페이지 및 정렬 설정 */
+.main_wrap {
+  width: 100%;
+  /* navbar 세로값 58px을 뺀 나머지 높이 */
+  height: calc(100vh - 58px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1 0 auto; */
+  position: relative;
+}
+
+/* 다크모드 */
+.main_wrap_backImg_night {
+  /* 메인페이지 배경 이미지 추가 */
+  background-image: url('/img/NDB_night_BackImg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* 라이트모드 */
+.main_wrap_backImg_day {
+  /* 메인페이지 배경 이미지 추가 */
+  background-image: url('/img/NDB_day_BackImg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* 위치조정 */
+.main_position {
+  height: 58px;
+}
+
+/* 검색 부분(필터링 및 설명텍스트 등 정렬) */
+.main_NavFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main_NavLangDB_Wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main_NavLangDB_Text {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  margin-bottom: 0;
+}
+.main_NavLangDB_Text label p,
+.main_NavLangDB_Text p {
+  margin-bottom: 0px;
+}
+.main_searchWrap {
+  /* background-color: red; */
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width: 650px;
+  height: 500px;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+.main_NavLangDB_Select {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50px;
+  height: 32px;
+  cursor: pointer;
+}
+.main_text {
+  font-family: 'Noto Sans KR';
+  font-size: 2rem;
+  margin-bottom: 36px;
+  width: 500px;
+  height: 80px;
+}
+
+.main_text > p {
+  margin: 0;
+}
+
+.main_text > p::after {
+  content: '|';
+  right: 0;
+  color: #aeaeae;
+  animation: caret 0.8s infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 검색 창 div 기본테마*/
+.main_search_night {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  height: 46px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.main_search_day {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  height: 46px;
+  border-radius: 30px;
+  border: 1px solid #aeaeae;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.main_search_day:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.main_Nav_search {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 38px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+/* 검색창 자동완성 div 검색어 선택시 표시 css */
+.main_autocomplete > div.active {
+  background: #333;
+  color: #eee;
+}
+
+/* 검색창 테두리 제거 */
+.main_language,
+.main_searchBar,
+.main_searchBar2,
+.main_search_button {
+  border: 0;
+  background-color: white;
+}
+
+.main_search_button {
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.main_searchLanguage,
+.main_searchLanguage2 {
+  height: 30px;
+  width: 100px !important;
+  min-width: 100px;
+  border: 0;
+  /* 기본 select 화살표 감추기 */
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0 8px 0 8px;
+  padding-left: 12px;
+  /* font-family:'GmarketSansMedium', 'Noto Sans KR'; */
+  background: url('/img/chevron-down-solid.svg') no-repeat 97% 50%/15px auto;
+}
+
+/* 검색 창 바 input */
+.main_searchBar,
+.main_searchBar2 {
+  box-sizing: border-box;
+  width: 70%;
+  height: 41px;
+  font-size: 1rem;
+}
+
+/* 검색 input 클릭시 생기는 테두리 제거 */
+#main_searchBar > input:focus {
+  outline: none;
+}
+
+/* 메인 검색 테두리 제거 */
+#main_searchBar2 > input:focus {
+  outline: none;
+}

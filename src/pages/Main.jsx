@@ -1,7 +1,10 @@
+import React, { useState, useEffect, useRef } from 'react'
+import MainSearch from '../components/main/MainSearch'
+import '../style/Main.css'
 
 import React, { useState, useEffect, useRef } from 'react'
+import CodeExam from '../components/codeExam/CodeExam'
 const Main = () => {
-
   const [apiText, setApiText] = useState('')
   const [htmlCode, setHtmlCode] = useState('')
   const [cssCode, setCssCode] = useState('')
@@ -113,9 +116,76 @@ const Main = () => {
 
 
   return (
-    <div >
-      <input ref={inputRef} type="text" style={{marginTop:'10vh'}}/>
-      <button onClick={fetchDataFromAPI} style={{marginTop:'10vh'}}>test</button>
+    <div>
+      <div className="main_wrap main_wrap_backImg_night">
+        <div className="main_searchWrap">
+          <div className="main_NavFlex">
+            <div className="main_NavLangDB_Wrap">
+              <div className="main_NavLangDB_Text">
+                <label for="main_Nav_DB">
+                  <p>DB&nbsp;</p>
+                </label>
+                <p>&nbsp;|&nbsp;</p>
+                <label for="main_Nav_API">
+                  <p>&nbsp;API</p>
+                </label>
+              </div>
+              <div className="main_NavLangDB_Select">
+                <input
+                  type="radio"
+                  id="main_Nav_DB"
+                  className="main_Navwon"
+                  name="main_Nav_RadioName"
+                />
+                <input
+                  type="radio"
+                  id="main_Nav_API"
+                  className="main_Navwon"
+                  name="main_Nav_RadioName"
+                />
+              </div>
+            </div>
+            <div className="main_text">
+              <p>
+                언어와 엔진을 설정한 후 <br />
+                배우고 싶은 부분을 집중 성장 시켜보세요.
+              </p>
+            </div>
+          </div>
+          <div className="main_search main_search_night">
+            <select name="main_language" id="" className="main_searchLanguage2">
+              <option value=" ">언어</option>
+              <option value="html">html</option>
+              <option value="css">css</option>
+              <option value="javascript">javascript</option>
+              <option value="java">java</option>
+              <option value="python">python</option>
+              <option value="c_language">C언어</option>
+            </select>
+            <i className="fa-solid fa-chevron-down"></i>
+            <input
+              type="text"
+              className="main_searchBar2"
+              name="main_searchBar_Name"
+            />
+            <div className="main_autocomplete"></div>
+            <button
+              type="submit"
+              className="main_search_button"
+              onclick="user_Btn()"
+            >
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <div className="main_TagWrap">
+            <ul>
+              <li>반복문</li>
+              <li>if문</li>
+              <li>grid</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
