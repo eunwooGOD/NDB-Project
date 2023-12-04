@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 const Main = () => {
 
   const [apiText, setApiText] = useState('')
@@ -105,9 +105,16 @@ const Main = () => {
   //   const specificCookieValue = getCookie('user-email');
   //   // Additional logic if needed
   // }, []);
+  const inputRef = useRef(null);
+
+  const handleSubmit = () => {
+      console.log(inputRef.current.value);
+  };
+
 
   return (
     <div>
+      <input ref={inputRef} type="text" />
       <button onClick={fetchDataFromAPI}>test</button>
     </div>
   )
