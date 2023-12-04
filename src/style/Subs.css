@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/* -------------구독모달창---------------- */
+.subs_body {
+    font-weight: 300;
+    font-size: 18px;    
+    line-height: 1.3em;
+}
+
+.subs_modal {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 40vh  ;     
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    z-index: 999;
+    display: none;
+    overflow-y: auto; 
+}
+
+.subs_modal:active {
+    display: block;
+}
+
+.subs_desc_content{
+    height:60vh;
+    
+}
+
+
+.subs_modal_content {
+    height:75vh;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
+    width: 100%; /* 변경: 너비를 100%로 설정 */
+    max-width: 870px;
+    max-height: 90vh ; 
+    padding-right:18px;
+    background-color: #1B3455;
+    margin: auto;
+    margin-top: 43px;
+    box-sizing: border-box; 
+    position: relative;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+/* 작은 화면에서의 레이아웃 조정 */
+@media (max-width: 768px) {
+    .subs_modal_content {
+        flex-direction: column;
+    }
+
+    .subs_benefit {
+        min-width: 150px; 
+    }
+    .content-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* 중형 화면에서의 레이아웃 조정 */
+@media (max-width: 1024px) {
+    .content-box {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .subs_benefit {
+        min-width: 180px; 
+    }
+}
+
+/* 대형 화면 (데스크탑) */
+@media (min-width: 1025px) {
+   
+    .subs_benefit {
+        min-width: 200px; 
+    }
+}
+
+/* 작은 화면에서의 스타일 조정 */
+@media (max-width: 768px) {
+    .subs_modal_content {
+        width: 95%;
+    }
+
+    .subs_subtitle, .subs_header, #subs_title {
+        font-size: smaller;
+    }
+}
+
+.subs_subtitle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.subs_button_close {
+    position: absolute;
+    top: 10px;    
+    right: 10px;  
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ccc;
+    cursor: pointer; 
+    font-size: 24px; 
+    line-height: 24px; 
+}
+.subs_button_close:hover {
+    color: #8CA9BF;
+}
+
+.subs_header {
+    font-size: larger;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#subs_title {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 70px;
+    padding-top:30px;
+}
+
+.subs_subtitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: -8px;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: 57px;
+}
+
+h2, h3 {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.subs_btn_open {
+    font-size: 15px;
+}
+
+.subs_desc_content {
+    display: flex;
+    justify-content: center;
+}
+
+.content-box > button {
+    width: 65px;
+    height: 40px;
+    align-self: center;
+    margin-top: auto;
+    
+}
+
+.content-box {
+    width: 45%;
+    height: auto; 
+    border-radius: 12px;
+    background-color: #8CA9BF;
+    margin-left: 20px;
+    margin-bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.content-box p {
+    margin: 0 0 10px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.subs_benefit {
+    margin-left: -13px;
+    font-size: 16px;
+    color: black;
+    width: 250px;
+    height: 300px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    min-width: 250px;
+    min-height: 200px;
+    max-width: 100%;  
+    max-height: 100%; 
+}
+
+.subs_price {
+    text-align: center;
+    margin: -22px 0 9px 0;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.subs_li {
+    list-style-type: none;
+    padding-left: 25px;
+    padding-right: 5px;
+}
+
+
+.content1:hover, .content2:hover, .content3:hover {
+    background-color: #FFFFFF;
+    transform: scale(1.05, 1.025);
+    transition-duration: 400ms;
+}
+
+.subs_desc_content input[type=email] {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 7px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.subs_desc_content input[type=email]::placeholder {
+    color: #ccc;
+}
+
+.subs_desc_content input[type=email]:focus::placeholder {
+    opacity: 0;
+}
+
+.subs_desc_content button {
+    display: flex;
+    padding: 7px;
+    background-color: rgb(212, 69, 97);
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    width: 122px;
+    font-size: 16px;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.subs_btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+    margin-top: 23px;
+}
+
+.subs_btn a,
+.subs_btn button {
+  text-decoration: none; 
+}
+
+.subs_desc_content button:hover {
+    background-color: rgb(211, 22, 60);
+}
+
+.overlay {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.315);
+    display: none;
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    z-index: 998;
+}
+
+.overlay-active {
+    display: block !important;
+    visibility: visible !important;
+}

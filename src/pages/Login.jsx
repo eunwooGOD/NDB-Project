@@ -1,9 +1,9 @@
 // src/App.jsx
 import React, { useEffect, useRef, useState } from 'react'
 import { useCookies } from 'react-cookie'
-import LoginFooter from '../components/LoginFooter'
 import '../style/Login.css' // Import your CSS file
 import axios from 'axios';
+import LoginFooter from '@components/LoginFooter'
 
 function Login() {
   const cookies = document.cookie
