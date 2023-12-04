@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Main from './pages/Main'
-import Join from './pages/Join'
-import Subs from './pages/Subs'
-import MyPage from './pages/Mypage'
-import NavigationBar from './components/navigation/NavigationBar'
-import Login from './pages/Login' 
-import './App.css'
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Main from './pages/Main';
+import Join from './pages/Join';
+import MyPage from './pages/MyPage';
+import Login from './pages/Login';
+import NavigationBar from './components/navigation/NavigationBar';
+// import SubsModal from './components/SubsModal';
+import './App.css';
+import CodeExam from './pages/CodeExam';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
           <Route path="/mypage" element={<MyPage />} />
+          
         </Routes>
       </div>
       {/* {isModalOpen && <SubsModal isOpen={isModalOpen} onClose={closeModal} />} */}
