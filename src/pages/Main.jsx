@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import MainSearch from '../components/main/MainSearch'
 import '../style/Main.css'
-
-import React, { useState, useEffect, useRef } from 'react'
 import CodeExam from '../components/codeExam/CodeExam'
 const Main = () => {
   const [apiText, setApiText] = useState('')
