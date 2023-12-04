@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import MainSearch from '../components/main/MainSearch'
 import '../style/Main.css'
 
-import React, { useState, useEffect, useRef } from 'react'
 import CodeExam from '../components/codeExam/CodeExam'
 const Main = () => {
   const [apiText, setApiText] = useState('')
@@ -108,12 +107,11 @@ const Main = () => {
   //   const specificCookieValue = getCookie('user-email');
   //   // Additional logic if needed
   // }, []);
-  const inputRef = useRef(null);
+  const inputRef = useRef(null)
 
   const handleSubmit = () => {
-      console.log(inputRef.current.value);
-  };
-
+    console.log(inputRef.current.value)
+  }
 
   return (
     <div>
@@ -147,8 +145,8 @@ const Main = () => {
             </div>
             <div className="main_text">
               <p>
-                언어와 엔진을 설정한 후 <br />
-                배우고 싶은 부분을 집중 성장 시켜보세요.
+                언어와 엔진을 설정한 후 배우고 싶은 <br />
+                부분을 집중 성장 시켜보세요.
               </p>
             </div>
           </div>
@@ -163,6 +161,7 @@ const Main = () => {
               <option value="c_language">C언어</option>
             </select>
             <i className="fa-solid fa-chevron-down"></i>
+            {/* search input */}
             <input
               type="text"
               className="main_searchBar2"

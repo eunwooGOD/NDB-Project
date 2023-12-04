@@ -78,12 +78,13 @@
   font-family: 'Noto Sans KR';
   font-size: 2rem;
   margin-bottom: 36px;
-  width: 500px;
+  width: auto;
   height: 80px;
 }
 
 .main_text > p {
   margin: 0;
+  text-align: center;
 }
 
 .main_text > p::after {
@@ -182,6 +183,15 @@
   width: 70%;
   height: 41px;
   font-size: 1rem;
+}
+
+.main_TagWrap > ul {
+  list-style: none;
+}
+.main_TagWrap > ul > li {
+  list-style-type: none;
+  float: left;
+  margin-right: 2rem;
 }
 
 /* 검색 input 클릭시 생기는 테두리 제거 */
