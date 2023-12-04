@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import MainSearch from '../components/main/MainSearch'
-import '../style/Main.css'
 import CodeExam from '../components/codeExam/CodeExam'
 import ChatBot from './ChatBot'; // 챗봇 컴포넌트를 임포트하세요.
-import CodeExam from '../components/codeExam/CodeExam'
+import '../style/Main.css'
 
 
 const Main = () => {
