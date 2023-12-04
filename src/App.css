@@ -1,5 +1,9 @@
 /* 231125 정은우 : body 및 기본 폰트 설정  */
 /* 로고 폰트 */
+/*  */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
 @font-face {
   font-family: 'GmarketSansMedium';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
@@ -7,8 +11,6 @@
   font-style: normal;
 }
 
-/*  */
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 /* 코딩 코드 폰트 */
 @font-face {

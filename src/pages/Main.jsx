@@ -113,9 +113,9 @@ const Main = () => {
 
 
   return (
-    <div>
-      <input ref={inputRef} type="text" />
-      <button onClick={fetchDataFromAPI}>test</button>
+    <div >
+      <input ref={inputRef} type="text" style={{marginTop:'10vh'}}/>
+      <button onClick={fetchDataFromAPI} style={{marginTop:'10vh'}}>test</button>
     </div>
   )
 }
