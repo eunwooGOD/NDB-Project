@@ -2,6 +2,10 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 /* 로고 폰트 */
+/*  */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
 @font-face {
   font-family: 'GmarketSansMedium';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
@@ -10,7 +14,6 @@
   font-style: normal;
 }
 
-/*  */
 
 /* 코딩 코드 폰트 */
 @font-face {

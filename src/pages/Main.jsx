@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import MainSearch from '../components/main/MainSearch'
 import '../style/Main.css'
 
+import React, { useState, useEffect, useRef } from 'react'
+import CodeExam from '../components/codeExam/CodeExam'
 const Main = () => {
   const [apiText, setApiText] = useState('')
   const [htmlCode, setHtmlCode] = useState('')
@@ -106,11 +108,12 @@ const Main = () => {
   //   const specificCookieValue = getCookie('user-email');
   //   // Additional logic if needed
   // }, []);
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
 
   const handleSubmit = () => {
-    console.log(inputRef.current.value)
-  }
+      console.log(inputRef.current.value);
+  };
+
 
   return (
     <div>
