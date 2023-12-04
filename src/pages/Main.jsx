@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react'
+import CodeExam from '../components/codeExam/CodeExam'
 const Main = () => {
 
   const [apiText, setApiText] = useState('')
@@ -116,6 +117,7 @@ const Main = () => {
     <div >
       <input ref={inputRef} type="text" style={{marginTop:'10vh'}}/>
       <button onClick={fetchDataFromAPI} style={{marginTop:'10vh'}}>test</button>
+      <CodeExam/>
     </div>
   )
 }
