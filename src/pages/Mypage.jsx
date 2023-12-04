@@ -15,11 +15,6 @@ function Mypage() {
   const handletabmenu = (tabNumber) => {
     setTabmenu(tabNumber);
     // 특정 탭이 선택되었을 때만 mp_card를 보여줌
-    if (tabNumber === 1) {
-      setNonedisplay('');
-    } else {
-      setNonedisplay('displaynone'); // 클래스 이름 'displaynone' 확인 필요
-    }
     console.log('확인되었습니다.', tabNumber);
   };
   
