@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import MainSearch from '../components/main/MainSearch'
+import CodeExam from '../components/codeExam/CodeExam'
 import '../style/Main.css'
 
-import React, { useState, useEffect, useRef } from 'react'
-import CodeExam from '../components/codeExam/CodeExam'
 const Main = () => {
   const [apiText, setApiText] = useState('')
   const [htmlCode, setHtmlCode] = useState('')
@@ -122,11 +121,11 @@ const Main = () => {
           <div className="main_NavFlex">
             <div className="main_NavLangDB_Wrap">
               <div className="main_NavLangDB_Text">
-                <label for="main_Nav_DB">
+                <label htmlFor="main_Nav_DB">
                   <p>DB&nbsp;</p>
                 </label>
                 <p>&nbsp;|&nbsp;</p>
-                <label for="main_Nav_API">
+                <label htmlFor="main_Nav_API">
                   <p>&nbsp;API</p>
                 </label>
               </div>
@@ -172,7 +171,7 @@ const Main = () => {
             <button
               type="submit"
               className="main_search_button"
-              onclick="user_Btn()"
+              onClick="user_Btn()"
             >
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -186,6 +185,7 @@ const Main = () => {
           </div>
         </div>
       </div>
+      <CodeExam/>
     </div>
   )
 }
