@@ -1,6 +1,6 @@
 import React from 'react'
-import '../style/MyPage.css'
-import profileImage from '../assets/beomsu/profile.png'
+import '../../style/MyPage.css'
+import profileImage from '../../assets/beomsu/profile.png'
 
 export const ProfileCard = () => {
   return (

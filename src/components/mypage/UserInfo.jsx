@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import '../style/MyPage.css'
-import googlepng from '../assets/beomsu/google_img.png'
-import githubpng from '../assets/beomsu/github_img.png'
-import kakaopng from '../assets/beomsu/kakao_img.png'
+import '../../style/MyPage.css'
+import googlepng from '../../assets/beomsu/google_img.png'
+import githubpng from '../../assets/beomsu/github_img.png'
+import kakaopng from '../../assets/beomsu/kakao_img.png'
 
 const UserInfo = ({ tabmenu }) => {
   return (
