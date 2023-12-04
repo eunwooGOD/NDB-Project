@@ -1,6 +1,13 @@
 
 import React, { useState, useEffect, useRef } from 'react'
+import ChatBot from './ChatBot'; // 챗봇 컴포넌트를 임포트하세요.
+
 const Main = () => {
+
+   // 챗봇 표시 여부를 관리하는 상태
+   const [showChatBot, setShowChatBot] = useState(true);
+
+
 
   const [apiText, setApiText] = useState('')
   const [htmlCode, setHtmlCode] = useState('')
@@ -117,6 +124,11 @@ const Main = () => {
       <input ref={inputRef} type="text" style={{marginTop:'10vh'}}/>
       <button onClick={fetchDataFromAPI} style={{marginTop:'10vh'}}>test</button>
       <h2 className='font-black'>텔윈드테스투</h2>
+
+      
+      {/* 챗봇 컴포넌트 */}
+      {showChatBot && <ChatBot />}
+
     </div>
   )
 }

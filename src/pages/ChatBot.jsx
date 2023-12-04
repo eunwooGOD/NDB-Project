@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import './ChatBot.css'; // CSS 파일 임포트
+import React, { useState, useEffect } from 'react';
+import '../style/ChatBot.css'; // CSS 파일 임포트
 
 function ChatBot() {
     const [isChatVisible, setIsChatVisible] = useState(false);
     const [isReviewFormVisible, setIsReviewFormVisible] = useState(false);
     const [userInput, setUserInput] = useState("");
     const [messages, setMessages] = useState([]);
+    const api_key = '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'; // OpenAI API 키
 
     const toggleChat = () => {
         setIsChatVisible(!isChatVisible);
@@ -40,32 +41,46 @@ function ChatBot() {
         setMessages(messages => [...messages, newMessage]);
         setUserInput("");
 
-        // GPT 요청 로직 구현 (예시)
-        // 실제 요청에 필요한 URL, 헤더 등은 적절하게 설정해야 합니다.
+        // 사용자 메시지를 GPT로 전달하여 답변 받기
+        const data = {
+            model: 'gpt-3.5-turbo',
+            temperature: 0.5,
+            n: 1,
+            messages: [
+                { role: 'system', content: 'You are now chatting with the AI.' },
+                ...messages, // 기존 메시지와 사용자 입력 메시지 합치기
+                { role: 'user', content: userInput } // 사용자 입력 메시지 추가
+            ],
+        };
+
         try {
-            const response = await fetch("YOUR_GPT_API_ENDPOINT", {
+            const response = await fetch("https://api.openai.com/v1/chat/completions", {
                 method: 'POST',
                 headers: {
+                    Authorization: 'Bearer ' + api_key,
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer YOUR_API_KEY'
                 },
-                body: JSON.stringify({
-                    prompt: userInput,
-                    max_tokens: 50 // 예시: 응답 길이 제한
-                })
+                body: JSON.stringify(data),
             });
 
             if (!response.ok) {
                 throw new Error('API 요청 실패');
             }
 
-            const data = await response.json();
-            const botResponse = { role: 'bot', content: data.choices[0].text.trim() };
+            const responseData = await response.json();
+            const botResponse = { role: 'bot', content: responseData.choices[0].message.content.trim() };
             setMessages(messages => [...messages, botResponse]);
         } catch (error) {
             console.error('API 요청 중 에러 발생:', error);
         }
     };
+
+    // messages 배열이 업데이트될 때마다 sendMessage를 호출하여 답변을 얻음
+    useEffect(() => {
+        if (messages[messages.length - 1]?.role === 'user') {
+            sendMessage();
+        }
+    }, [messages]);
 
     return (
         <div>
