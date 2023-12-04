@@ -116,6 +116,7 @@ const Main = () => {
     <div >
       <input ref={inputRef} type="text" style={{marginTop:'10vh'}}/>
       <button onClick={fetchDataFromAPI} style={{marginTop:'10vh'}}>test</button>
+      <h2 className='font-black'>텔윈드테스투</h2>
     </div>
   )
 }
