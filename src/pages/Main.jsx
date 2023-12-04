@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
-import MainSearch from '../components/main/MainSearch'
-import '../style/Main.css'
 
 import React, { useState, useEffect, useRef } from 'react'
+const Main = () => {
 import ChatBot from './ChatBot'; // 챗봇 컴포넌트를 임포트하세요.
 import CodeExam from '../components/codeExam/CodeExam'
 
 const Main = () => {
-
+  
    // 챗봇 표시 여부를 관리하는 상태
    const [showChatBot, setShowChatBot] = useState(true);
   const [apiText, setApiText] = useState('')
