@@ -3,8 +3,13 @@ import MainSearch from '../components/main/MainSearch'
 import '../style/Main.css'
 
 import React, { useState, useEffect, useRef } from 'react'
+import ChatBot from './ChatBot'; // 챗봇 컴포넌트를 임포트하세요.
 import CodeExam from '../components/codeExam/CodeExam'
+
 const Main = () => {
+
+   // 챗봇 표시 여부를 관리하는 상태
+   const [showChatBot, setShowChatBot] = useState(true);
   const [apiText, setApiText] = useState('')
   const [htmlCode, setHtmlCode] = useState('')
   const [cssCode, setCssCode] = useState('')
@@ -170,7 +175,14 @@ const Main = () => {
   // }, []);
   
   return (
-    <div>
+    <div >
+      <input ref={inputRef} type="text" style={{marginTop:'10vh'}}/>
+      <button onClick={fetchDataFromAPI} style={{marginTop:'10vh'}}>test</button>
+      <h2 className='font-black'>텔윈드테스투</h2>
+
+      
+      {/* 챗봇 컴포넌트 */}
+      {showChatBot && <ChatBot />}
       <div className="main_wrap main_wrap_backImg_night">
         <div className="main_searchWrap">
           <div className="main_NavFlex">
