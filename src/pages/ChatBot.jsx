@@ -6,7 +6,7 @@ function ChatBot() {
     const [isReviewFormVisible, setIsReviewFormVisible] = useState(false);
     const [userInput, setUserInput] = useState("");
     const [messages, setMessages] = useState([]);
-    const api_key = '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'; // OpenAI API 키
+    const api_key = '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'; // OpenAI API 키
 
     const toggleChat = () => {
         setIsChatVisible(!isChatVisible);
@@ -34,13 +34,13 @@ function ChatBot() {
         }
     };
 
-    const sendMessage = async () => {
+    const sendMessage = () => {
         if (userInput.trim() === "") return;
-
+    
         const newMessage = { role: 'user', content: userInput };
         setMessages(messages => [...messages, newMessage]);
         setUserInput("");
-
+    
         // 사용자 메시지를 GPT로 전달하여 답변 받기
         const data = {
             model: 'gpt-3.5-turbo',
@@ -48,31 +48,32 @@ function ChatBot() {
             n: 1,
             messages: [
                 { role: 'system', content: 'You are now chatting with the AI.' },
-                ...messages, // 기존 메시지와 사용자 입력 메시지 합치기
-                { role: 'user', content: userInput } // 사용자 입력 메시지 추가
+                ...messages,
+                { role: 'user', content: userInput }
             ],
         };
-
-        try {
-            const response = await fetch("https://api.openai.com/v1/chat/completions", {
-                method: 'POST',
-                headers: {
-                    Authorization: 'Bearer ' + api_key,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
+    
+        fetch("https://api.openai.com/v1/chat/completions", {
+            method: 'POST',
+            headers: {
+                Authorization: 'Bearer ' + api_key,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
             if (!response.ok) {
                 throw new Error('API 요청 실패');
             }
-
-            const responseData = await response.json();
+            return response.json();
+        })
+        .then(responseData => {
             const botResponse = { role: 'bot', content: responseData.choices[0].message.content.trim() };
             setMessages(messages => [...messages, botResponse]);
-        } catch (error) {
+        })
+        .catch(error => {
             console.error('API 요청 중 에러 발생:', error);
-        }
+        });
     };
 
     // messages 배열이 업데이트될 때마다 sendMessage를 호출하여 답변을 얻음
