@@ -1,7 +1,5 @@
-
 import React, { useState, useEffect, useRef } from 'react'
 const Main = () => {
-
   const [apiText, setApiText] = useState('')
   const [htmlCode, setHtmlCode] = useState('')
   const [cssCode, setCssCode] = useState('')
@@ -9,9 +7,9 @@ const Main = () => {
   const [loading, setLoading] = useState(false)
   const [inputString, setInputString] = useState('')
   const [selectLanguage, setSelectLanguage] = useState('')
+  const inputRef = useRef()
 
-  const api_key = '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'
-
+  // let REST_API_KEY = process.env.GPT_KEY;
   const handleInputChange = (event, inputType) => {
     const value = event.target.value
     if (inputType === 'main_searchBar') {
@@ -35,12 +33,42 @@ const Main = () => {
   }
 
   const fetchDataFromAPI = async () => {
+  
+    const api_key = import.meta.env.VITE_REACT_APP_GPT_KEY;
+  
     setLoading(true)
-
+    console.log(inputRef.current.value)
     const messages = [
-      // Your messages array
+      //명령 프롬프트
+      { role: 'system', content: 'You are a helpful assistant.' },
+      {
+        role: 'user',
+        content:
+          'GPT, HTML, CSS, JS 언어로 ' +
+          inputRef.current.value +
+          '에 대해서 HTML ,CSS,JS 코드와 함께 제시해주세요. 제일먼제 문제를 제시해주세요. 주석은 한글로 작성해주세요',
+      },
+      {
+        role: 'assistant',
+        content:
+          '"""HTML Code:""" 여기에 HTML 코드를 작성해주세요. 없다면 실습 문제에서 제시한 답안 HTML코드를 작성해주세요"""End HTML Code"""',
+      },
+      {
+        role: 'assistant',
+        content:
+          '"""CSS Code:""" 여기에 CSS 코드를 작성해주세요. 없다면 실습 문제에서 제시한 답안 CSS코드를 작성해주세요"""End CSS Code"""',
+      },
+      {
+        role: 'assistant',
+        content:
+          '"""JS Code:""" 여기에 JS 코드를 작성해주세요. 없다면 실습 문제에서 제시한 답안 JS코드를 작성해주세요"""End JS Code"""',
+      },
+      {
+        role: 'assistant',
+        content:
+          '"""text:""" 여기에 제시한 코드들에 대한 설명을 작성해주세요. """End text Code"""',
+      },
     ]
-
     const data = {
       model: 'gpt-3.5-turbo',
       temperature: 0.5,
@@ -75,20 +103,50 @@ const Main = () => {
       let updatedApiText = ''
 
       for (let i = 0; i < splitResponse.length; i++) {
-        // Update logic based on your original implementation
-        // ...
+        // 응답 데이터 가공
+        if (splitResponse[i].trim().startsWith('html')) {
+          currentCode = 'HTML' // 현재 작업중인 코드유형 저장장
+          updatedHtmlCode = splitResponse[i].replace('html', '').trim()
+        } else if (splitResponse[i].trim().startsWith('css')) {
+          currentCode = 'CSS'
+          updatedCssCode = splitResponse[i].replace('css', '').trim()
+        } else if (splitResponse[i].trim().startsWith('javascript')) {
+          currentCode = 'JS'
+          updatedJsCode = splitResponse[i].replace('javascript', '').trim()
+        } else if (splitResponse[i].trim().startsWith('text')) {
+          currentCode = 'text'
+          updatedApiText = splitResponse[i].replace('text', '').trim()
+        } else {
+          switch (currentCode) {
+            case 'HTML':
+              updatedHtmlCode += splitResponse[i].trim()
+              break
+            case 'CSS':
+              updatedCssCode += splitResponse[i].trim()
+              break
+            case 'JS':
+              updatedJsCode += splitResponse[i].trim()
+              break
+            case 'text':
+              updatedApiText += splitResponse[i].trim()
+          }
+        }
       }
+      let f_text = splitResponse[0] // 문제 설명
+      console.log(splitResponse) //gpt api 전체 응답
+      console.log(f_text)
 
+      console.log(updatedApiText) //설명
+      console.log(updatedHtmlCode)
+      console.log(
+        updatedCssCode, // Css 코드
+      )
+      console.log(updatedJsCode)
+      // gpt 응답 데이터 가공 후 state에 할당
       setApiText(updatedApiText)
       setHtmlCode(updatedHtmlCode)
       setCssCode(updatedCssCode)
       setJsCode(updatedJsCode)
-      console.log(
-        updatedApiText,
-        updatedHtmlCode,
-        updatedCssCode,
-        updatedJsCode,
-      )
       // Additional logic if needed
     } catch (error) {
       console.error('Error fetching data from API:', error)
@@ -105,17 +163,13 @@ const Main = () => {
   //   const specificCookieValue = getCookie('user-email');
   //   // Additional logic if needed
   // }, []);
-  const inputRef = useRef(null);
-
-  const handleSubmit = () => {
-      console.log(inputRef.current.value);
-  };
-
-
+  
   return (
-    <div >
-      <input ref={inputRef} type="text" style={{marginTop:'10vh'}}/>
-      <button onClick={fetchDataFromAPI} style={{marginTop:'10vh'}}>test</button>
+    <div>
+      <input ref={inputRef} type="text" style={{ marginTop: '10vh' }} />
+      <button onClick={handleButtonClick} style={{ marginTop: '10vh' }}>
+        test
+      </button>
     </div>
   )
 }
