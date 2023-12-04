@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import NavigationBar from './components/navigation/NavigationBar';
 // import SubsModal from './components/SubsModal';
 import './App.css';
+import CodeExam from './pages/CodeExam';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
           <Route path="/mypage" element={<MyPage />} />
+          
         </Routes>
       </div>
       {/* {isModalOpen && <SubsModal isOpen={isModalOpen} onClose={closeModal} />} */}
