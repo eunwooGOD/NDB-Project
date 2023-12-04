@@ -1,19 +1,22 @@
 /* 231125 정은우 : body 및 기본 폰트 설정  */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 /* 로고 폰트 */
 @font-face {
   font-family: 'GmarketSansMedium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 /*  */
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 /* 코딩 코드 폰트 */
 @font-face {
   font-family: 'intelone-mono-font-family-regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
 }
@@ -28,7 +31,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Noto Sans KR', sans-serif;
-  background-color: #1B3455;
+  background-color: #1b3455;
   color: white;
   overflow-y: scroll;
 }
