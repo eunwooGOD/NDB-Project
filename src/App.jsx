@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Main from './pages/Main';
 import Join from './pages/Join';
 import MyPage from './pages/MyPage';

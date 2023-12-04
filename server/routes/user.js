@@ -6,8 +6,8 @@ router.get('/', (req, res) => {
   console.log('user router')
 })
 //DB 연결
-const conn = require("../config/database");
-
+const db = require("../config/database");
+let conn = db.init();
 // 로그인 라우터
 router.post("/login", (req, res) => {
     console.log("login Router", req.body);
@@ -16,12 +16,11 @@ router.post("/login", (req, res) => {
     let pw = req.body.userPw;
   
     let sql =
-      "select id,user_name,email from project_member where id=? and pw = ?";
-  
+      "select EMAIL,PW from MEMBER where EMAIL=? and PW = ?";
     conn.query(sql, [id, pw], (err, rows) => {
       console.log("db응답", rows);
   
-      if (rows > 0) {
+      if (rows.length > 0) {
         res.json({ msg: "success", user: rows[0] });
       } else {
         res.json({ msg: "failed" });

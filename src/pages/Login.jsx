@@ -55,10 +55,11 @@ function Login() {
         userPw: pwRef.current.value, // 비밀번호
       })
       .then((res) => {
-        if (res.data.result === 'success') {
+        console.log(res)
+        if (res.data.msg === 'success') {
           window.location.href = '/'
         } else {
-          console.log('로그인 가짜성공')
+          console.log(res.data.msg)
         }
       })
   }
