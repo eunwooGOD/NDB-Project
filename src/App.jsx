@@ -5,9 +5,9 @@ import Join from './pages/Join';
 import MyPage from './pages/MyPage';
 import Login from './pages/Login';
 import NavigationBar from './components/navigation/NavigationBar';
+import CodeExam from './pages/CodeExam';
 // import SubsModal from './components/SubsModal';
 import './App.css';
-import CodeExam from './pages/CodeExam';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
