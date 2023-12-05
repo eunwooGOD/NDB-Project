@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import '../style/Login.css' // Import your CSS file
-import axios from 'axios';
+import axios from 'axios'
 import LoginFooter from '@components/LoginFooter'
 
 function Login() {
@@ -99,9 +99,7 @@ function Login() {
               ref={pwRef}
               required
             />
-            <span id="error-message" className="password_span hidden">
-              이메일 및 비밀번호를 확인하세요.
-            </span>
+            <span id="error-message" className="password_span hidden"></span>
             <button
               type="submit"
               id="login-button"
