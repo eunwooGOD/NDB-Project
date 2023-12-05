@@ -251,7 +251,9 @@ const Main = () => {
             </ul>
           </div>
         </div>
+
       </div>
+            
     </div>
   )
 }
