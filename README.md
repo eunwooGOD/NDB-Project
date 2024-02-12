@@ -1,6 +1,6 @@
 
 # NDB-Project
-프로젝트 실행 계기 및 필요성
+Chat-gpt API 를 활용한 개인별 맞춤 코딩 예제 제공 서비스
 
 ## 목차
 - [프로젝트 정의](#NDB-Project)
