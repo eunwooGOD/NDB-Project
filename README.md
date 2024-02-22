@@ -9,15 +9,7 @@ Chat-gpt API 를 활용한 개인별 맞춤 코딩 예제 제공 서비스
 - [git hub rules](https://github.com/eunwooGOD/NDB-Project/blob/main/docs/git%20rules.md)
 ---
 ## 사용기술
-- react
-
-- vite
-
-- node.js
-
-- express
-
-
+- HTML, CSS, Javascript, Nodejs, express, Mysql, GPT3.5 API, Jqueryw
 
 ### Getting Started
 
