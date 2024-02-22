@@ -22,6 +22,9 @@ Chat-gpt API 를 활용한 개인별 맞춤 코딩 예제 제공 서비스
 ### Getting Started
 
 ```
+npm install
+```
+```
 npm run dev
 ```
 
